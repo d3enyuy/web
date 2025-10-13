@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { Menu, X, Home, User, Clock, Award, Briefcase, BookOpen, FolderOpen, FileText, StickyNote, Mail } from "lucide-react"
+import { ThemeToggle } from "./theme-toggle"
 
 const navItems = [
   { id: "hero", label: "Home", icon: Home },
@@ -83,42 +84,55 @@ export function Navigation() {
     <>
       {/* Desktop Navigation - Side Bar */}
       <nav className="fixed left-0 top-0 z-50 hidden h-screen w-24 flex-col items-center justify-center lg:flex">
-        <ul className="flex flex-col gap-8">
-          {navItems.map(({ id, label, icon: Icon }) => (
-            <li key={id} className="relative">
-              <a
-                href={`#${id}`}
-                onClick={(e) => handleNavClick(e, id)}
-                className={cn(
-                  "group relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-200 cursor-pointer",
-                  activeSection === id 
-                    ? "bg-primary/20 text-primary" 
-                    : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
-                )}
-              >
-                {/* Section indicator dot */}
-                <div
+        <div className="flex flex-col items-center gap-8">
+          <ul className="flex flex-col gap-8">
+            {navItems.map(({ id, label, icon: Icon }) => (
+              <li key={id} className="relative">
+                <a
+                  href={`#${id}`}
+                  onClick={(e) => handleNavClick(e, id)}
                   className={cn(
-                    "absolute left-0 w-1 h-8 rounded-r-full transition-all duration-200",
-                    activeSection === id
-                      ? "bg-primary"
-                      : "bg-transparent group-hover:bg-primary/50",
+                    "group relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-200 cursor-pointer",
+                    activeSection === id 
+                      ? "bg-primary/20 text-primary" 
+                      : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
                   )}
-                />
-                
-                {/* Section icon */}
-                <Icon className="h-5 w-5" />
-                
-                {/* Tooltip on hover */}
-                <div className="absolute left-full ml-4 px-3 py-2 bg-background/95 backdrop-blur-sm border border-border rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
-                  <span className="text-sm font-medium text-foreground">{label}</span>
-                  {/* Tooltip arrow */}
-                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-2 h-2 bg-background border-l border-b border-border rotate-45" />
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
+                >
+                  {/* Section indicator dot */}
+                  <div
+                    className={cn(
+                      "absolute left-0 w-1 h-8 rounded-r-full transition-all duration-200",
+                      activeSection === id
+                        ? "bg-primary"
+                        : "bg-transparent group-hover:bg-primary/50",
+                    )}
+                  />
+                  
+                  {/* Section icon */}
+                  <Icon className="h-5 w-5" />
+                  
+                  {/* Tooltip on hover */}
+                  <div className="absolute left-full ml-4 px-3 py-2 bg-background/95 backdrop-blur-sm border border-border rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+                    <span className="text-sm font-medium text-foreground">{label}</span>
+                    {/* Tooltip arrow */}
+                    <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-2 h-2 bg-background border-l border-b border-border rotate-45" />
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+          
+          {/* Theme Toggle */}
+          <div className="relative group">
+            <ThemeToggle />
+            {/* Tooltip for theme toggle */}
+            <div className="absolute left-full ml-4 px-3 py-2 bg-background/95 backdrop-blur-sm border border-border rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+              <span className="text-sm font-medium text-foreground">Toggle theme</span>
+              {/* Tooltip arrow */}
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-2 h-2 bg-background border-l border-b border-border rotate-45" />
+            </div>
+          </div>
+        </div>
       </nav>
 
       {/* Mobile Navigation - Top Bar */}
@@ -131,13 +145,16 @@ export function Navigation() {
           >
             LGD
           </a>
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="relative z-50 text-foreground transition-colors hover:text-primary"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="relative z-50 text-foreground transition-colors hover:text-primary"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}
