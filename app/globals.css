@@ -4,18 +4,20 @@
 @custom-variant dark (&:is(.dark *));
 
 /* Custom portfolio color scheme inspired by Brittany Chiang */
+
+/* Light Mode */
 :root {
-  --navy: #0a192f;
-  --light-navy: #112240;
-  --lightest-navy: #233554;
-  --navy-shadow: rgba(2, 12, 27, 0.7);
-  --dark-slate: #495670;
-  --slate: #8892b0;
-  --light-slate: #a8b2d1;
-  --lightest-slate: #ccd6f6;
-  --white: #e6f1ff;
-  --green: #64ffda;
-  --green-tint: rgba(100, 255, 218, 0.1);
+  --navy: #ffffff;
+  --light-navy: #f8fafc;
+  --lightest-navy: #e2e8f0;
+  --navy-shadow: rgba(0, 0, 0, 0.1);
+  --dark-slate: #64748b;
+  --slate: #475569;
+  --light-slate: #334155;
+  --lightest-slate: #1e293b;
+  --white: #ffffff;
+  --green: #059669;
+  --green-tint: rgba(5, 150, 105, 0.1);
 
   --background: var(--navy);
   --foreground: var(--lightest-slate);
@@ -24,13 +26,13 @@
   --popover: var(--light-navy);
   --popover-foreground: var(--lightest-slate);
   --primary: var(--green);
-  --primary-foreground: var(--navy);
+  --primary-foreground: var(--white);
   --secondary: var(--lightest-navy);
-  --secondary-foreground: var(--lightest-slate);
+  --secondary-foreground: var(--light-slate);
   --muted: var(--lightest-navy);
-  --muted-foreground: var(--slate);
+  --muted-foreground: var(--dark-slate);
   --accent: var(--green);
-  --accent-foreground: var(--navy);
+  --accent-foreground: var(--white);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: var(--lightest-navy);
@@ -40,23 +42,23 @@
   --sidebar: var(--navy);
   --sidebar-foreground: var(--lightest-slate);
   --sidebar-primary: var(--green);
-  --sidebar-primary-foreground: var(--navy);
+  --sidebar-primary-foreground: var(--white);
   --sidebar-accent: var(--green);
-  --sidebar-accent-foreground: var(--navy);
+  --sidebar-accent-foreground: var(--white);
   --sidebar-border: var(--lightest-navy);
   --sidebar-ring: var(--green);
 }
 
 .dark {
-  --navy: #1e293b;
-  --light-navy: #334155;
-  --lightest-navy: #475569;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
   --navy-shadow: rgba(2, 12, 27, 0.7);
-  --dark-slate: #73737d;
-  --slate: #a1a1aa;
-  --light-slate: #d1d5db;
-  --lightest-slate: #e5e7eb;
-  --white: #ffffff;
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
   --green: #64ffda;
   --green-tint: rgba(100, 255, 218, 0.1);
 
@@ -132,11 +134,17 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Theme transition */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 
   /* Custom scrollbar */
