@@ -24,7 +24,7 @@ export function SocialLinks() {
           <span className="sr-only">LinkedIn</span>
         </a>
         <a
-          href="mailto:lambiv@example.com"
+          href="mailto:gillslambiv@gmail.com"
           className="text-muted-foreground transition-all duration-200 hover:-translate-y-1 hover:text-primary"
         >
           <Mail className="h-5 w-5" />
@@ -54,7 +54,7 @@ export function SocialLinks() {
           <span className="sr-only">LinkedIn</span>
         </a>
         <a
-          href="mailto:lambiv@example.com"
+          href="mailto:gillslambiv@gmail.com"
           className="text-muted-foreground transition-all duration-200 hover:text-primary active:scale-95"
         >
           <Mail className="h-5 w-5" />

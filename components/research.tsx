@@ -51,7 +51,7 @@ export function Research() {
     <section id="research" className="min-h-screen py-16 pb-24 lg:ml-24 lg:py-20">
       <div className="mb-8 lg:mb-12">
         <h2 className="mb-4 flex items-center gap-3 text-2xl font-bold text-foreground sm:gap-4 sm:text-3xl">
-          <span className="font-mono text-lg text-primary sm:text-xl">03.</span>
+          <span className="font-mono text-lg text-primary sm:text-xl">05.</span>
           Research & Publications
           <span className="h-px flex-1 bg-border" />
         </h2>

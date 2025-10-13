@@ -93,7 +93,7 @@ export function Notes() {
       <div className="mb-8 lg:mb-12">
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div className="flex flex-1 items-center gap-3 sm:gap-4">
-            <span className="font-mono text-lg text-primary sm:text-xl">06.</span>
+            <span className="font-mono text-lg text-primary sm:text-xl">08.</span>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Notes & TILs</h2>
             <span className="hidden h-px flex-1 bg-border sm:block" />
           </div>
