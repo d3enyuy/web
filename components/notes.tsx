@@ -89,33 +89,33 @@ export function Notes() {
   }
 
   return (
-    <section id="notes" className="min-h-screen py-20 lg:ml-24">
-      <div className="mb-12">
-        <div className="mb-4 flex items-center justify-between gap-4">
-          <div className="flex flex-1 items-center gap-4">
-            <span className="font-mono text-xl text-primary">06.</span>
-            <h2 className="text-3xl font-bold text-foreground">Notes & TILs</h2>
-            <span className="h-px flex-1 bg-border" />
+    <section id="notes" className="min-h-screen py-16 pb-24 lg:ml-24 lg:py-20">
+      <div className="mb-8 lg:mb-12">
+        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <div className="flex flex-1 items-center gap-3 sm:gap-4">
+            <span className="font-mono text-lg text-primary sm:text-xl">06.</span>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Notes & TILs</h2>
+            <span className="hidden h-px flex-1 bg-border sm:block" />
           </div>
           <Button
             onClick={() => setShowAddForm(!showAddForm)}
             variant="outline"
             size="sm"
-            className="border-primary/30 text-primary hover:bg-primary/10"
+            className="w-fit border-primary/30 text-primary hover:bg-primary/10 active:scale-95"
           >
             {showAddForm ? <X className="mr-2 h-4 w-4" /> : <Plus className="mr-2 h-4 w-4" />}
             {showAddForm ? "Cancel" : "Add Note"}
           </Button>
         </div>
-        <p className="text-muted-foreground">
+        <p className="text-sm text-muted-foreground sm:text-base">
           Quick notes, today-I-learned moments, and evergreen thoughts from my learning journey.
         </p>
       </div>
 
       {showAddForm && (
-        <div className="mb-8 rounded-lg border border-primary/30 bg-card p-6 shadow-lg shadow-primary/5">
-          <h3 className="mb-4 text-xl font-semibold text-foreground">Add New Note</h3>
-          <div className="space-y-4">
+        <div className="mb-6 rounded-lg border border-primary/30 bg-card p-4 shadow-lg shadow-primary/5 sm:mb-8 sm:p-6">
+          <h3 className="mb-3 text-lg font-semibold text-foreground sm:mb-4 sm:text-xl">Add New Note</h3>
+          <div className="space-y-3 sm:space-y-4">
             <div>
               <label htmlFor="title" className="mb-2 block text-sm font-medium text-foreground">
                 Title
@@ -126,7 +126,7 @@ export function Notes() {
                 value={newNote.title}
                 onChange={(e) => setNewNote({ ...newNote, title: e.target.value })}
                 placeholder="TIL: Something interesting..."
-                className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:px-4 sm:text-base"
               />
             </div>
             <div>
@@ -139,7 +139,7 @@ export function Notes() {
                 onChange={(e) => setNewNote({ ...newNote, content: e.target.value })}
                 placeholder="Write your note here... You can use **markdown** formatting!"
                 rows={8}
-                className="w-full rounded-md border border-border bg-background px-4 py-2 font-mono text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full rounded-md border border-border bg-background px-3 py-2 font-mono text-xs text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:px-4 sm:text-sm"
               />
             </div>
             <div>
@@ -152,14 +152,14 @@ export function Notes() {
                 value={newNote.tags}
                 onChange={(e) => setNewNote({ ...newNote, tags: e.target.value })}
                 placeholder="React, TypeScript, Performance"
-                className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:px-4 sm:text-base"
               />
             </div>
-            <div className="flex justify-end gap-3">
-              <Button variant="outline" onClick={() => setShowAddForm(false)}>
+            <div className="flex flex-col gap-2 sm:flex-row sm:justify-end sm:gap-3">
+              <Button variant="outline" onClick={() => setShowAddForm(false)} className="w-full sm:w-auto">
                 Cancel
               </Button>
-              <Button onClick={handleAddNote} className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button onClick={handleAddNote} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 sm:w-auto">
                 Add Note
               </Button>
             </div>
@@ -167,7 +167,7 @@ export function Notes() {
         </div>
       )}
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
         {notes.map((note, index) => (
           <div
             key={index}
@@ -175,13 +175,13 @@ export function Notes() {
           >
             <button
               onClick={() => toggleNote(index)}
-              className="flex w-full items-start justify-between gap-4 p-6 text-left"
+              className="flex w-full items-start justify-between gap-3 p-4 text-left sm:gap-4 sm:p-6"
             >
               <div className="flex-1">
-                <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+                <h3 className="mb-1.5 text-base font-semibold text-foreground transition-colors group-hover:text-primary sm:mb-2 sm:text-lg">
                   {note.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground sm:text-sm">
                   {new Date(note.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "short",
@@ -196,8 +196,8 @@ export function Notes() {
               )}
             </button>
             {expandedNotes.has(index) && (
-              <div className="border-t border-border px-6 pb-6">
-                <div className="prose prose-invert prose-sm mt-4 mb-4 max-w-none leading-relaxed text-muted-foreground">
+              <div className="border-t border-border px-4 pb-4 sm:px-6 sm:pb-6">
+                <div className="prose prose-invert prose-sm mt-3 mb-3 max-w-none leading-relaxed text-muted-foreground sm:mt-4 sm:mb-4">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm, remarkMath]}
                     rehypePlugins={[rehypeKatex]}

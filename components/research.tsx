@@ -48,25 +48,25 @@ const workingOn = [
 
 export function Research() {
   return (
-    <section id="research" className="min-h-screen py-20 lg:ml-24">
-      <div className="mb-12">
-        <h2 className="mb-4 flex items-center gap-4 text-3xl font-bold text-foreground">
-          <span className="font-mono text-xl text-primary">03.</span>
+    <section id="research" className="min-h-screen py-16 pb-24 lg:ml-24 lg:py-20">
+      <div className="mb-8 lg:mb-12">
+        <h2 className="mb-4 flex items-center gap-3 text-2xl font-bold text-foreground sm:gap-4 sm:text-3xl">
+          <span className="font-mono text-lg text-primary sm:text-xl">03.</span>
           Research & Publications
           <span className="h-px flex-1 bg-border" />
         </h2>
       </div>
 
-      <div className="mb-16">
-        <h3 className="mb-6 text-2xl font-semibold text-foreground">Published Work</h3>
-        <div className="space-y-8">
+      <div className="mb-12 lg:mb-16">
+        <h3 className="mb-4 text-xl font-semibold text-foreground sm:mb-6 sm:text-2xl">Published Work</h3>
+        <div className="space-y-6 lg:space-y-8">
           {publications.map((paper, index) => (
             <div
               key={index}
-              className="group rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+              className="group rounded-lg border border-border bg-card p-4 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 sm:p-6"
             >
-              <div className="mb-3 flex flex-wrap items-start justify-between gap-4">
-                <h4 className="text-xl font-semibold text-foreground">{paper.title}</h4>
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-4">
+                <h4 className="text-lg font-semibold text-foreground sm:text-xl">{paper.title}</h4>
                 <span className="font-mono text-sm text-primary">{paper.venue}</span>
               </div>
               <div className="prose prose-invert prose-sm mb-4 max-w-none leading-relaxed text-muted-foreground">
@@ -133,16 +133,16 @@ export function Research() {
       </div>
 
       <div>
-        <h3 className="mb-6 text-2xl font-semibold text-foreground">Current Research</h3>
-        <div className="space-y-8">
+        <h3 className="mb-4 text-xl font-semibold text-foreground sm:mb-6 sm:text-2xl">Current Research</h3>
+        <div className="space-y-6 lg:space-y-8">
           {workingOn.map((project, index) => (
             <div
               key={index}
-              className="group rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+              className="group rounded-lg border border-border bg-card p-4 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 sm:p-6"
             >
-              <div className="mb-3 flex items-start justify-between gap-4">
-                <h4 className="text-xl font-semibold text-foreground">{project.title}</h4>
-                <Badge className="bg-primary/20 text-primary">In Progress</Badge>
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <h4 className="text-lg font-semibold text-foreground sm:text-xl">{project.title}</h4>
+                <Badge className="w-fit bg-primary/20 text-primary">In Progress</Badge>
               </div>
               <div className="prose prose-invert prose-sm mb-4 max-w-none leading-relaxed text-muted-foreground">
                 <ReactMarkdown

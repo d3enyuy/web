@@ -15,7 +15,7 @@ export default function Home() {
       <Navigation />
       <SocialLinks />
 
-      <main className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 md:px-12 lg:px-24">
         <Hero />
         <About />
         <Experience />
