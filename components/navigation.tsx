@@ -72,14 +72,14 @@ export function Navigation() {
       </nav>
 
       {/* Mobile Navigation - Top Bar */}
-      <nav className="fixed left-0 right-0 top-0 z-50 bg-background/95 backdrop-blur-sm lg:hidden">
-        <div className="flex items-center justify-between px-6 py-4">
+      <nav className="fixed left-0 right-0 top-0 z-50 lg:hidden">
+        <div className="flex items-center justify-between border-b border-border bg-background/95 px-6 py-4 backdrop-blur-sm">
           <a href="#" className="font-mono text-lg font-bold text-primary">
             LGD
           </a>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-foreground transition-colors hover:text-primary"
+            className="relative z-50 text-foreground transition-colors hover:text-primary"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -88,16 +88,18 @@ export function Navigation() {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 top-[60px] bg-background/98 backdrop-blur-md">
-            <ul className="flex flex-col items-center justify-center gap-8 py-12">
+          <div className="fixed inset-0 top-[61px] z-40 bg-background/98 backdrop-blur-md">
+            <ul className="flex h-full flex-col items-center justify-start gap-6 overflow-y-auto px-6 py-8">
               {navItems.map(({ id, label }, index) => (
                 <li key={id} className="w-full text-center">
                   <a
                     href={`#${id}`}
                     onClick={handleMobileNavClick}
                     className={cn(
-                      "block py-3 text-lg font-medium transition-all duration-200",
-                      activeSection === id ? "text-primary" : "text-muted-foreground hover:text-foreground",
+                      "block rounded-lg px-4 py-3 text-lg font-medium transition-all duration-200",
+                      activeSection === id 
+                        ? "bg-primary/10 text-primary" 
+                        : "text-muted-foreground hover:bg-primary/5 hover:text-foreground",
                     )}
                   >
                     <span className="font-mono text-sm text-primary">{`0${index + 1}.`}</span> {label}
