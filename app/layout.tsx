@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Lambiv Gills Dzenyuy - Software Engineer and Researcher exploring the intersection of code and research",
   generator: "v0.app",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 }
 
 export default function RootLayout({

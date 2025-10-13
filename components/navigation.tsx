@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
+import { Menu, X } from "lucide-react"
 
 const navItems = [
   { id: "about", label: "About" },
@@ -15,6 +16,7 @@ const navItems = [
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("")
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,31 +38,76 @@ export function Navigation() {
     return () => observer.disconnect()
   }, [])
 
+  const handleMobileNavClick = () => {
+    setIsMobileMenuOpen(false)
+  }
+
   return (
-    <nav className="fixed left-0 top-0 z-50 hidden h-screen w-24 flex-col items-center justify-center lg:flex">
-      <ul className="flex flex-col gap-8">
-        {navItems.map(({ id, label }) => (
-          <li key={id}>
-            <a
-              href={`#${id}`}
-              className={cn(
-                "group flex items-center gap-4 text-sm font-medium transition-all duration-200",
-                activeSection === id ? "text-primary" : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              <span
+    <>
+      {/* Desktop Navigation - Side Bar */}
+      <nav className="fixed left-0 top-0 z-50 hidden h-screen w-24 flex-col items-center justify-center lg:flex">
+        <ul className="flex flex-col gap-8">
+          {navItems.map(({ id, label }) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
                 className={cn(
-                  "h-px transition-all duration-200",
-                  activeSection === id
-                    ? "w-16 bg-primary"
-                    : "w-8 bg-muted-foreground group-hover:w-16 group-hover:bg-foreground",
+                  "group flex items-center gap-4 text-sm font-medium transition-all duration-200",
+                  activeSection === id ? "text-primary" : "text-muted-foreground hover:text-foreground",
                 )}
-              />
-              <span className="sr-only">{label}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+              >
+                <span
+                  className={cn(
+                    "h-px transition-all duration-200",
+                    activeSection === id
+                      ? "w-16 bg-primary"
+                      : "w-8 bg-muted-foreground group-hover:w-16 group-hover:bg-foreground",
+                  )}
+                />
+                <span className="sr-only">{label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Mobile Navigation - Top Bar */}
+      <nav className="fixed left-0 right-0 top-0 z-50 bg-background/95 backdrop-blur-sm lg:hidden">
+        <div className="flex items-center justify-between px-6 py-4">
+          <a href="#" className="font-mono text-lg font-bold text-primary">
+            LGD
+          </a>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-foreground transition-colors hover:text-primary"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <div className="fixed inset-0 top-[60px] bg-background/98 backdrop-blur-md">
+            <ul className="flex flex-col items-center justify-center gap-8 py-12">
+              {navItems.map(({ id, label }, index) => (
+                <li key={id} className="w-full text-center">
+                  <a
+                    href={`#${id}`}
+                    onClick={handleMobileNavClick}
+                    className={cn(
+                      "block py-3 text-lg font-medium transition-all duration-200",
+                      activeSection === id ? "text-primary" : "text-muted-foreground hover:text-foreground",
+                    )}
+                  >
+                    <span className="font-mono text-sm text-primary">{`0${index + 1}.`}</span> {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </nav>
+    </>
   )
 }
