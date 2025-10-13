@@ -9,23 +9,26 @@ export function SocialLinks() {
           href="https://github.com/d3enyuy"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground transition-all duration-200 hover:-translate-y-1 hover:text-primary"
+          className="text-muted-foreground transition-all duration-200 hover:-translate-y-1 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          aria-label="Visit GitHub profile"
         >
           <Github className="h-5 w-5" />
           <span className="sr-only">GitHub</span>
         </a>
         <a
-          href="https://linkedin.com/in/lambiv-gills-dzenyuy"
+          href="https://www.linkedin.com/in/lambiv-dzenyuy/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground transition-all duration-200 hover:-translate-y-1 hover:text-primary"
+          className="text-muted-foreground transition-all duration-200 hover:-translate-y-1 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          aria-label="Visit LinkedIn profile"
         >
           <Linkedin className="h-5 w-5" />
           <span className="sr-only">LinkedIn</span>
         </a>
         <a
           href="mailto:gillslambiv@gmail.com"
-          className="text-muted-foreground transition-all duration-200 hover:-translate-y-1 hover:text-primary"
+          className="text-muted-foreground transition-all duration-200 hover:-translate-y-1 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          aria-label="Send email to gillslambiv@gmail.com"
         >
           <Mail className="h-5 w-5" />
           <span className="sr-only">Email</span>
@@ -39,23 +42,26 @@ export function SocialLinks() {
           href="https://github.com/d3enyuy"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground transition-all duration-200 hover:text-primary active:scale-95"
+          className="text-muted-foreground transition-all duration-200 hover:text-primary active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          aria-label="Visit GitHub profile"
         >
           <Github className="h-5 w-5" />
           <span className="sr-only">GitHub</span>
         </a>
         <a
-          href="https://linkedin.com/in/lambiv-gills-dzenyuy"
+          href="https://www.linkedin.com/in/lambiv-dzenyuy/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground transition-all duration-200 hover:text-primary active:scale-95"
+          className="text-muted-foreground transition-all duration-200 hover:text-primary active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          aria-label="Visit LinkedIn profile"
         >
           <Linkedin className="h-5 w-5" />
           <span className="sr-only">LinkedIn</span>
         </a>
         <a
           href="mailto:gillslambiv@gmail.com"
-          className="text-muted-foreground transition-all duration-200 hover:text-primary active:scale-95"
+          className="text-muted-foreground transition-all duration-200 hover:text-primary active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-sm"
+          aria-label="Send email to gillslambiv@gmail.com"
         >
           <Mail className="h-5 w-5" />
           <span className="sr-only">Email</span>
