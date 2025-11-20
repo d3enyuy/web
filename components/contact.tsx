@@ -17,11 +17,11 @@ export function Contact() {
           interesting work. Whether you have a question or just want to say hi, feel free to reach out!
         </p>
         <a
-          href="mailto:lambiv@example.com"
+          href="mailto:gillslambiv@gmail.com"
           className="inline-flex items-center gap-3 rounded border-2 border-primary px-8 py-4 font-mono text-lg text-primary transition-all duration-200 hover:bg-primary/10"
         >
           <Mail className="h-5 w-5" />
-          Say Hello
+          send a mail to gillslambiv@gmail.com
         </a>
       </div>
 
