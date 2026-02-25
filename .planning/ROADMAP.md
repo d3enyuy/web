@@ -12,7 +12,7 @@ This roadmap transforms a functional Next.js portfolio into a complete personal 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Content Updates** - Update contact information and link homepage blog to dynamic content
+- [x] **Phase 1: Content Updates** - Update contact information and link homepage blog to dynamic content (completed 2026-02-25)
 - [ ] **Phase 2: Blog Infrastructure** - File-based markdown content system with individual post pages
 - [ ] **Phase 3: Blog Listing & Discovery** - Blog index page with post cards and reading time
 - [ ] **Phase 4: Responsive Design** - Mobile-optimized navigation and layouts across all sections
@@ -135,7 +135,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Content Updates | 0/2 | Ready to execute | - |
+| 1. Content Updates | 0/2 | Complete    | 2026-02-25 |
 | 2. Blog Infrastructure | 0/TBD | Not started | - |
 | 3. Blog Listing & Discovery | 0/TBD | Not started | - |
 | 4. Responsive Design | 0/TBD | Not started | - |
