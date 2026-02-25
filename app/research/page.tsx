@@ -7,9 +7,6 @@ export default function ResearchPage() {
       <BookOpen className="mb-6 h-12 w-12 text-primary/50" />
       <h1 className="mb-4 text-4xl font-bold text-foreground">Research</h1>
       <p className="mb-2 font-mono text-sm text-primary">Coming Soon</p>
-      <p className="mb-10 max-w-md text-lg leading-relaxed text-muted-foreground">
-        My research publications, papers, and ongoing work will be listed here. Currently being compiled.
-      </p>
       <Link
         href="/"
         className="inline-flex items-center gap-2 font-mono text-sm text-primary transition-colors hover:text-primary/70"
