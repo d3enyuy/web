@@ -99,13 +99,47 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (To be filled by roadmapper) | | |
+| CONT-01 | Phase 1 | Pending |
+| CONT-02 | Phase 1 | Pending |
+| CONT-03 | Phase 1 | Pending |
+| CONT-04 | Phase 1 | Pending |
+| CONT-05 | Phase 1 | Pending |
+| BLOG-01 | Phase 2 | Pending |
+| BLOG-02 | Phase 2 | Pending |
+| BLOG-03 | Phase 2 | Pending |
+| BLOG-04 | Phase 2 | Pending |
+| BLOG-05 | Phase 2 | Pending |
+| BLOG-06 | Phase 2 | Pending |
+| BLOG-07 | Phase 3 | Pending |
+| BLOG-08 | Phase 3 | Pending |
+| BLOG-09 | Phase 3 | Pending |
+| RESP-01 | Phase 4 | Pending |
+| RESP-02 | Phase 4 | Pending |
+| RESP-03 | Phase 4 | Pending |
+| RESP-04 | Phase 4 | Pending |
+| RESP-05 | Phase 4 | Pending |
+| RESP-06 | Phase 4 | Pending |
+| BLOG-10 | Phase 5 | Pending |
+| BLOG-11 | Phase 5 | Pending |
+| BLOG-12 | Phase 5 | Pending |
+| BLOG-13 | Phase 6 | Pending |
+| SEO-01 | Phase 6 | Pending |
+| SEO-02 | Phase 6 | Pending |
+| SEO-03 | Phase 6 | Pending |
+| SEO-04 | Phase 6 | Pending |
+| PERF-01 | Phase 6 | Pending |
+| PERF-02 | Phase 6 | Pending |
+| PERF-03 | Phase 6 | Pending |
+| ENH-01 | Phase 7 | Pending |
+| ENH-02 | Phase 7 | Pending |
+| ENH-03 | Phase 7 | Pending |
+| ENH-04 | Phase 7 | Pending |
 
 **Coverage:**
 - v1 requirements: 38 total
-- Mapped to phases: 0 (pending roadmap creation)
-- Unmapped: 38 ⚠️
+- Mapped to phases: 38
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after initial definition*
+*Last updated: 2026-02-25 after roadmap creation*
