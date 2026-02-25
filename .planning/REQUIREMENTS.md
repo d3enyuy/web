@@ -37,9 +37,9 @@ Requirements for enhanced portfolio with blog functionality. Each maps to roadma
 
 ### Content Updates
 
-- [ ] **CONT-01**: Update email address to gillslambiv@gmail.com across all pages
-- [ ] **CONT-02**: Update LinkedIn username to lambiv-dzenyuy
-- [ ] **CONT-03**: Update GitHub username to d3enyuy
+- [x] **CONT-01**: Update email address to gillslambiv@gmail.com across all pages
+- [x] **CONT-02**: Update LinkedIn username to lambiv-dzenyuy
+- [x] **CONT-03**: Update GitHub username to d3enyuy
 - [ ] **CONT-04**: Replace hardcoded blog data in homepage blog section with dynamic content from markdown files
 - [ ] **CONT-05**: Link homepage blog cards to `/blog/[slug]` routes
 
@@ -99,9 +99,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CONT-01 | Phase 1 | Pending |
-| CONT-02 | Phase 1 | Pending |
-| CONT-03 | Phase 1 | Pending |
+| CONT-01 | Phase 1 | Complete |
+| CONT-02 | Phase 1 | Complete |
+| CONT-03 | Phase 1 | Complete |
 | CONT-04 | Phase 1 | Pending |
 | CONT-05 | Phase 1 | Pending |
 | BLOG-01 | Phase 2 | Pending |
