@@ -32,10 +32,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. GitHub link points to github.com/d3enyuy
   4. Homepage blog section displays posts from markdown files (not hardcoded data)
   5. Homepage blog cards link to individual post pages at /blog/[slug]
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- TBD (will be defined during phase planning)
+- [ ] 01-01-PLAN.md — Update social media links and contact information
+- [ ] 01-02-PLAN.md — Create blog data access layer and link homepage blog cards
 
 ### Phase 2: Blog Infrastructure
 **Goal**: Individual blog posts render from markdown files with validated frontmatter and optimized performance
@@ -134,7 +135,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Content Updates | 0/TBD | Not started | - |
+| 1. Content Updates | 0/2 | Ready to execute | - |
 | 2. Blog Infrastructure | 0/TBD | Not started | - |
 | 3. Blog Listing & Discovery | 0/TBD | Not started | - |
 | 4. Responsive Design | 0/TBD | Not started | - |
