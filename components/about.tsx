@@ -1,14 +1,16 @@
 import { Badge } from "@/components/ui/badge"
 
 const skills = [
+  "JavaScript",
   "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
+  "PHP",
   "Python",
-  "Machine Learning",
-  "Distributed Systems",
-  "Cloud Architecture",
+  "Laravel",
+  "React",
+  "Node.js",
+  "Meilisearch",
+  "Stripe",
+  "Docker",
 ]
 
 export function About() {
@@ -24,16 +26,17 @@ export function About() {
 
       <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-muted-foreground">
         <p>
-          Hello! I'm Lambiv, a software engineer focused on building reliable, maintainable software. I care about
-          writing clean code and creating things that actually work well.
+          I'm Lambiv, a software developer based in Germany. I hold a B.S. in Computer Science from the
+          University of Buea and have been building software professionally since 2021.
         </p>
         <p>
-          I enjoy working across the stack — from backend systems to frontend interfaces. Outside of work, I like
-          digging into new technologies and occasionally exploring topics like distributed systems and data science
-          out of personal curiosity.
+          I've worked across the stack — backend APIs, frontend interfaces, billing systems, payment integrations,
+          and data pipelines — for companies in Germany, Latvia, and Bulgaria. I care about writing clean,
+          maintainable code that actually solves problems.
         </p>
         <p>
-          When I'm not coding, I enjoy contributing to open-source projects.
+          Outside of work, I enjoy contributing to open-source projects and occasionally building side projects
+          like Aluung, a financial inclusion tool for informal savings groups.
         </p>
       </div>
 
@@ -51,7 +54,6 @@ export function About() {
           ))}
         </div>
       </div>
-
     </section>
   )
 }

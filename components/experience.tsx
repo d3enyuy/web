@@ -1,19 +1,9 @@
 const experiences = [
-  {
-    company: "Tech Innovation Labs",
-    role: "Senior Software Engineer",
-    period: "2022 – Present",
-  },
-  {
-    company: "Research University",
-    role: "Graduate Research Assistant",
-    period: "2020 – 2022",
-  },
-  {
-    company: "Startup Inc.",
-    role: "Full Stack Developer",
-    period: "2019 – 2020",
-  },
+  { company: "Bilin GmbH", role: "Software Developer", period: "Aug 2023 – Present", location: "Germany" },
+  { company: "SIA Stayflo", role: "Software Developer", period: "Dec 2023 – Present", location: "Latvia" },
+  { company: "Oryx Capital Ltd", role: "Software Developer", period: "Jul 2024 – Mar 2025", location: "Bulgaria" },
+  { company: "Nasia Tech", role: "Software Engineer Intern", period: "Mar 2022 – Aug 2022", location: "Buea, Cameroon" },
+  { company: "Ciniter", role: "Software Engineer Intern", period: "Jul 2021 – Dec 2021", location: "Buea, Cameroon" },
 ]
 
 export function Experience() {
@@ -33,6 +23,7 @@ export function Experience() {
             <div>
               <span className="font-medium text-foreground">{exp.role}</span>
               <span className="ml-2 text-muted-foreground">— {exp.company}</span>
+              <span className="ml-2 font-mono text-xs text-muted-foreground/60">{exp.location}</span>
             </div>
             <span className="font-mono text-sm text-muted-foreground">{exp.period}</span>
           </div>
