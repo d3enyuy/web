@@ -45,6 +45,7 @@
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
     "geist": "latest",
+    "gray-matter": "^4.0.3",
     "input-otp": "1.4.1",
     "katex": "latest",
     "lucide-react": "^0.454.0",
