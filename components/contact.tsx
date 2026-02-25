@@ -13,8 +13,7 @@ export function Contact() {
 
       <div className="mx-auto max-w-2xl text-center">
         <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-          I'm always open to discussing new projects, research collaborations, or opportunities to contribute to
-          interesting work. Whether you have a question or just want to say hi, feel free to reach out!
+          I'm always open to discussing new projects or opportunities. Feel free to reach out!
         </p>
         <a
           href="mailto:gillslambiv@gmail.com"
