@@ -3,14 +3,13 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { Menu, X, Home, User, Briefcase, FileText, Mail, FolderOpen, BookOpen, StickyNote, Clock } from "lucide-react"
+import { Menu, X, Home, User, Briefcase, Mail, FolderOpen, BookOpen, StickyNote, Clock } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 
 const scrollItems = [
   { id: "hero", label: "Home", icon: Home },
   { id: "about", label: "About", icon: User },
   { id: "experience", label: "Experience", icon: Briefcase },
-  { id: "blog", label: "Blog", icon: FileText },
   { id: "contact", label: "Contact", icon: Mail },
 ]
 

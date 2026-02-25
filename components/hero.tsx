@@ -8,11 +8,10 @@ export function Hero() {
         Lambiv Gills Dzenyuy
       </h1>
       <h2 className="mb-6 text-4xl font-bold leading-tight text-muted-foreground md:text-5xl lg:text-6xl">
-        Software Engineer & Researcher
+        Software Engineer
       </h2>
       <p className="mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-        I build and explore at the intersection of code and research, creating innovative solutions while pushing the
-        boundaries of what's possible in software engineering and computer science.
+        I build things for the web and beyond — focused on writing clean, reliable software and solving real problems.
       </p>
       <div className="flex gap-6">
         <a

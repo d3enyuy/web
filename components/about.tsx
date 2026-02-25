@@ -11,8 +11,6 @@ const skills = [
   "Cloud Architecture",
 ]
 
-const researchAreas = ["Machine Learning", "Distributed Systems", "Computer Vision", "Natural Language Processing"]
-
 export function About() {
   return (
     <section id="about" className="py-20 lg:ml-24 lg:py-24">
@@ -26,18 +24,16 @@ export function About() {
 
       <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-muted-foreground">
         <p>
-          Hello! I'm Lambiv, a software engineer and researcher passionate about building innovative solutions and
-          exploring cutting-edge technologies. My journey in tech combines practical engineering with academic
-          research, allowing me to bridge theory and practice.
+          Hello! I'm Lambiv, a software engineer focused on building reliable, maintainable software. I care about
+          writing clean code and creating things that actually work well.
         </p>
         <p>
-          I specialize in developing scalable systems and conducting research at the intersection of machine
-          learning, distributed systems, and software architecture. My work focuses on creating efficient,
-          maintainable solutions while contributing to the broader understanding of computer science fundamentals.
+          I enjoy working across the stack — from backend systems to frontend interfaces. Outside of work, I like
+          digging into new technologies and occasionally exploring topics like distributed systems and data science
+          out of personal curiosity.
         </p>
         <p>
-          When I'm not coding or researching, I enjoy sharing knowledge through technical writing, contributing to
-          open-source projects, and exploring new technologies that push the boundaries of what's possible.
+          When I'm not coding, I enjoy contributing to open-source projects.
         </p>
       </div>
 
@@ -56,20 +52,6 @@ export function About() {
         </div>
       </div>
 
-      <div className="mt-8">
-        <h3 className="mb-4 text-lg font-semibold text-foreground">Research Interests</h3>
-        <div className="flex flex-wrap gap-2">
-          {researchAreas.map((area) => (
-            <Badge
-              key={area}
-              variant="outline"
-              className="border-primary/30 bg-primary/5 px-3 py-1 text-sm text-primary"
-            >
-              {area}
-            </Badge>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }
