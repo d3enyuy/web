@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react"
+import { Github, Linkedin, Download } from "lucide-react"
 
 export function Hero() {
   return (
@@ -13,7 +13,7 @@ export function Hero() {
       <p className="mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
         I build things for the web and beyond — focused on writing clean, reliable software and solving real problems.
       </p>
-      <div className="flex gap-6">
+      <div className="flex flex-wrap gap-4">
         <a
           href="https://github.com/d3enyuw"
           target="_blank"
@@ -31,6 +31,14 @@ export function Hero() {
         >
           <Linkedin className="h-5 w-5" />
           LinkedIn
+        </a>
+        <a
+          href="/cv.pdf"
+          download="Lambiv_Gills_Dzenyuy_CV.pdf"
+          className="inline-flex items-center gap-2 rounded border border-primary px-6 py-3 font-mono text-sm text-primary transition-all duration-200 hover:bg-primary/10"
+        >
+          <Download className="h-5 w-5" />
+          Resume
         </a>
       </div>
     </section>
