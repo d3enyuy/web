@@ -39,7 +39,7 @@ export function Hero() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/lambiv-gills-dzenyuy"
+            href="https://linkedin.com/in/lambiv-dzenyuy"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded border border-primary px-6 py-3 font-mono text-sm text-primary transition-all duration-200 hover:bg-primary/10"
