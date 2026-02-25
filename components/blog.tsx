@@ -1,55 +1,22 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock } from "lucide-react"
-
-const blogPosts = [
-  {
-    title: "Building Scalable Microservices with Go",
-    date: "2024-01-15",
-    readTime: "8 min",
-    excerpt:
-      "A deep dive into designing and implementing microservices architecture using Go, covering service discovery, load balancing, and fault tolerance patterns.",
-    tags: ["Go", "Microservices", "Architecture"],
-    category: "technical",
-  },
-  {
-    title: "Understanding Distributed Consensus Algorithms",
-    date: "2024-01-08",
-    readTime: "12 min",
-    excerpt:
-      "An exploration of Paxos, Raft, and other consensus algorithms, with practical examples and implementation considerations for distributed systems.",
-    tags: ["Distributed Systems", "Algorithms", "Theory"],
-    category: "research",
-  },
-  {
-    title: "Machine Learning Model Deployment Best Practices",
-    date: "2023-12-20",
-    readTime: "10 min",
-    excerpt:
-      "Lessons learned from deploying ML models to production, including versioning, monitoring, A/B testing, and handling model drift.",
-    tags: ["Machine Learning", "MLOps", "DevOps"],
-    category: "technical",
-  },
-  {
-    title: "Reflections on Research and Engineering",
-    date: "2023-12-10",
-    readTime: "6 min",
-    excerpt:
-      "Thoughts on bridging the gap between academic research and practical engineering, and how each discipline informs the other.",
-    tags: ["Career", "Research", "Engineering"],
-    category: "thoughts",
-  },
-]
+import type { BlogPost } from "@/lib/blog"
 
 const categories = ["all", "technical", "research", "thoughts"]
 
-export function Blog() {
+interface BlogProps {
+  posts?: BlogPost[]
+}
+
+export function Blog({ posts = [] }: BlogProps) {
   const [selectedCategory, setSelectedCategory] = useState("all")
 
   const filteredPosts =
-    selectedCategory === "all" ? blogPosts : blogPosts.filter((post) => post.category === selectedCategory)
+    selectedCategory === "all" ? posts : posts.filter((post) => post.category === selectedCategory)
 
   return (
     <section id="blog" className="min-h-screen py-16 pb-24 lg:ml-24 lg:py-20">
@@ -79,36 +46,35 @@ export function Blog() {
 
       <div className="space-y-4 sm:space-y-6">
         {filteredPosts.map((post, index) => (
-          <article
-            key={index}
-            className="group cursor-pointer rounded-lg border border-border bg-card p-4 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 sm:p-6"
-          >
-            <div className="mb-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground sm:mb-3 sm:gap-4 sm:text-sm">
-              <span className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
-              <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                {post.readTime}
-              </span>
-            </div>
-            <h3 className="mb-2 text-xl font-semibold text-foreground transition-colors group-hover:text-primary sm:mb-3 sm:text-2xl">
-              {post.title}
-            </h3>
-            <p className="mb-3 text-sm leading-relaxed text-muted-foreground sm:mb-4 sm:text-base">{post.excerpt}</p>
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <Badge key={tag} variant="outline" className="border-primary/30 bg-primary/5 text-xs text-primary">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </article>
+          <Link key={index} href={`/blog/${post.slug}`} className="block">
+            <article className="group cursor-pointer rounded-lg border border-border bg-card p-4 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 sm:p-6">
+              <div className="mb-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground sm:mb-3 sm:gap-4 sm:text-sm">
+                <span className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  {post.readTime}
+                </span>
+              </div>
+              <h3 className="mb-2 text-xl font-semibold text-foreground transition-colors group-hover:text-primary sm:mb-3 sm:text-2xl">
+                {post.title}
+              </h3>
+              <p className="mb-3 text-sm leading-relaxed text-muted-foreground sm:mb-4 sm:text-base">{post.excerpt}</p>
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <Badge key={tag} variant="outline" className="border-primary/30 bg-primary/5 text-xs text-primary">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </article>
+          </Link>
         ))}
       </div>
     </section>

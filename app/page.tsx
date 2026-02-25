@@ -10,8 +10,11 @@ import { Notes } from "@/components/notes"
 import { Contact } from "@/components/contact"
 import { Navigation } from "@/components/navigation"
 import { SocialLinks } from "@/components/social-links"
+import { getBlogPosts } from "@/lib/blog"
 
 export default function Home() {
+  const blogPosts = getBlogPosts()
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -25,7 +28,7 @@ export default function Home() {
         <Experience />
         <Research />
         <Projects />
-        <Blog />
+        <Blog posts={blogPosts} />
         <Notes />
         <Contact />
       </main>
