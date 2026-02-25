@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://lambiv-dzenyuy.vercel.app",
+    url: "https://lambivgills.com",
     siteName: "Lambiv Gills Dzenyuy Portfolio",
     title: "Lambiv Gills Dzenyuy | Software Engineer & Researcher",
     description: "Software Engineer at Bilin GmbH specializing in Neo4j graph databases, Apache Kafka, PostgreSQL, and Spring Boot. Based in Germany with expertise in full-stack development.",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     creator: "@lambiv_dzenyuy",
   },
   alternates: {
-    canonical: "https://lambiv-dzenyuy.vercel.app",
+    canonical: "https://lambivgills.com",
   },
   category: "technology",
 }
@@ -102,8 +102,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="google-site-verification" content="your-google-verification-code" />
-        <meta name="msvalidate.01" content="your-bing-verification-code" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <ThemeProvider
