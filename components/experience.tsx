@@ -1,5 +1,3 @@
-import { ExternalLink } from "lucide-react"
-
 const experiences = [
   {
     company: "Tech Innovation Labs",
@@ -11,7 +9,6 @@ const experiences = [
       "Mentored team of 5 junior engineers in best practices and code quality",
       "Architected CI/CD pipeline reducing deployment time by 60%",
     ],
-    url: "#",
   },
   {
     company: "Research University",
@@ -23,7 +20,6 @@ const experiences = [
       "Developed novel algorithms for consensus in distributed environments",
       "Collaborated with industry partners on real-world applications",
     ],
-    url: "#",
   },
   {
     company: "Startup Inc.",
@@ -35,13 +31,12 @@ const experiences = [
       "Optimized database queries reducing response time by 50%",
       "Contributed to product roadmap and technical decision-making",
     ],
-    url: "#",
   },
 ]
 
 export function Experience() {
   return (
-    <section id="experience" className="min-h-screen py-20 lg:ml-24">
+    <section id="experience" className="py-20 lg:ml-24 lg:py-24">
       <div className="mb-12">
         <h2 className="mb-4 flex items-center gap-4 text-3xl font-bold text-foreground">
           <span className="font-mono text-xl text-primary">02.</span>
@@ -52,20 +47,11 @@ export function Experience() {
 
       <div className="space-y-12">
         {experiences.map((exp, index) => (
-          <div
-            key={index}
-            className="group relative rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
-          >
-            <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
+          <div key={index} className="border-l-2 border-primary/30 pl-6">
+            <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
               <div>
                 <h3 className="text-xl font-semibold text-foreground">{exp.role}</h3>
-                <a
-                  href={exp.url}
-                  className="inline-flex items-center gap-2 text-lg text-primary transition-colors hover:underline"
-                >
-                  {exp.company}
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+                <span className="text-lg text-primary">{exp.company}</span>
               </div>
               <span className="font-mono text-sm text-muted-foreground">{exp.period}</span>
             </div>

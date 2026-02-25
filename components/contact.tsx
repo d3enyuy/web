@@ -2,10 +2,10 @@ import { Mail } from "lucide-react"
 
 export function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-20 lg:ml-24">
+    <section id="contact" className="py-20 lg:ml-24 lg:py-24">
       <div className="mb-12">
         <h2 className="mb-4 flex items-center gap-4 text-3xl font-bold text-foreground">
-          <span className="font-mono text-xl text-primary">07.</span>
+          <span className="font-mono text-xl text-primary">04.</span>
           Get In Touch
           <span className="h-px flex-1 bg-border" />
         </h2>
