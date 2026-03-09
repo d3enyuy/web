@@ -1,26 +1,22 @@
 import { Mail } from "lucide-react"
 
+import { SectionHeading } from "@/components/section-heading"
+
 export function Contact() {
   return (
-    <section id="contact" className="py-20 lg:ml-24 lg:py-24">
-      <div className="mb-12">
-        <h2 className="mb-4 flex items-center gap-4 text-3xl font-bold text-foreground">
-          <span className="font-mono text-xl text-primary">03.</span>
-          Get In Touch
-          <span className="h-px flex-1 bg-border" />
-        </h2>
-      </div>
+    <section id="contact" className="scroll-mt-28 py-20 lg:py-24">
+      <SectionHeading number="04" title="Get In Touch" />
 
       <div className="mx-auto max-w-2xl text-center">
         <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-          I'm always open to discussing new projects or opportunities. Feel free to reach out!
+          Email is the best place to start. If you want to talk about backend systems, product engineering, or a practical software problem, reach out there first.
         </p>
         <a
           href="mailto:gillslambiv@gmail.com"
-          className="inline-flex items-center gap-3 rounded border-2 border-primary px-8 py-4 font-mono text-lg text-primary transition-all duration-200 hover:bg-primary/10"
+          className="inline-flex items-center gap-3 rounded-md border-2 border-primary px-8 py-4 font-mono text-lg text-primary transition-all duration-200 hover:bg-primary/10"
         >
           <Mail className="h-5 w-5" />
-          send a mail to gillslambiv@gmail.com
+          gillslambiv@gmail.com
         </a>
       </div>
 

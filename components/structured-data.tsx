@@ -3,8 +3,8 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Lambiv Gills Dzenyuy",
-    "alternateName": ["Lambiv Dzenyuy", "Lambiv Gills", "Lambiv", "Gills", "Dzenyuy", "Gills Dzenyuy", "Dzenyuy Gills", "Dzenyuy", "Gills Dzenyuy", "Dzenyuy Gills", "Dzenyuy", "Gills Dzenyuy", "Dzenyuy Gills", "Dzenyuy", "Lambiv Gills Dzenyuy", "Lambiv Dzenyuy Gills", "Lambiv Gills Dzenyuy", "Lambiv Dzenyuy Gills"],
-    "description": "Software Engineer specializing in Neo4j graph databases, Apache Kafka, PostgreSQL, and Spring Boot",
+    "alternateName": ["Lambiv Dzenyuy", "Lambiv Gills", "Lambiv", "Gills Dzenyuy"],
+    "description": "Software engineer focused on custom DRM, real-time video, analytics systems, and practical product work",
     "url": "https://lambivgills.com",
     "image": "https://lambivgills.com/face.JPG",
     "sameAs": [
@@ -19,8 +19,7 @@ export function StructuredData() {
     },
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "DE",
-      "addressRegion": "Germany"
+      "addressCountry": "CM"
     },
     "alumniOf": {
       "@type": "EducationalOrganization",
@@ -31,18 +30,26 @@ export function StructuredData() {
       }
     },
     "knowsAbout": [
+      "Apache Kafka",
+      "Apache Druid",
+      "Digital Rights Management",
+      "Real-time Video",
+      "Machine Learning",
+      "Telegram API",
+      "Payments",
+      "LLM Deployment",
       "Neo4j",
-      "Apache Kafka", 
-      "PostgreSQL",
-      "Spring Boot",
-      "Java",
+      "Meilisearch",
+      "Redis",
+      "Laravel",
+      "Svelte",
+      "Soketi",
       "React",
       "Node.js",
-      "Python",
-      "Data Science",
-      "Graph Databases",
       "Software Engineering",
-      "Full Stack Development"
+      "Full Stack Development",
+      "Product Engineering",
+      "Backend Systems"
     ],
     "hasCredential": [
       {
@@ -86,13 +93,9 @@ export function StructuredData() {
     ],
     "email": "gillslambiv@gmail.com",
     "nationality": "Cameroonian",
-    "birthPlace": {
-      "@type": "Place",
-      "name": "Cameroon"
-    },
     "workLocation": {
-      "@type": "Place", 
-      "name": "Germany"
+      "@type": "Place",
+      "name": "Remote"
     }
   }
 

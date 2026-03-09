@@ -1,49 +1,39 @@
 import { Badge } from "@/components/ui/badge"
-
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "PHP",
-  "Python",
-  "Laravel",
-  "React",
-  "Node.js",
-  "Meilisearch",
-  "Stripe",
-  "Docker",
-]
+import { SectionHeading } from "@/components/section-heading"
+import { coreStack, focusAreas } from "@/lib/site-content"
 
 export function About() {
   return (
-    <section id="about" className="py-20 lg:ml-24 lg:py-24">
-      <div className="mb-12">
-        <h2 className="mb-4 flex items-center gap-4 text-3xl font-bold text-foreground">
-          <span className="font-mono text-xl text-primary">01.</span>
-          About Me
-          <span className="h-px flex-1 bg-border" />
-        </h2>
-      </div>
+    <section id="about" className="scroll-mt-28 py-20 lg:py-24">
+      <SectionHeading number="01" title="About" />
 
-      <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-muted-foreground">
-        <p>
-          I'm Lambiv, a software developer based in Germany. I hold a B.S. in Computer Science from the
-          University of Buea and have been building software professionally since 2021.
-        </p>
-        <p>
-          I've worked across the stack — backend APIs, frontend interfaces, billing systems, payment integrations,
-          and data pipelines — for companies in Germany, Latvia, and Bulgaria. I care about writing clean,
-          maintainable code that actually solves problems.
-        </p>
-        <p>
-          Outside of work, I enjoy contributing to open-source projects and occasionally building side projects
-          like Aluung, a financial inclusion tool for informal savings groups.
-        </p>
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+        <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            I&apos;m Lambiv, a software engineer with a computer science background and experience working across distributed teams in Europe and Africa.
+          </p>
+          <p>
+            The work I enjoy most sits where product clarity meets technical rigor: backend systems, streaming and analytics infrastructure, operator-facing tooling, and software that has to stay dependable after launch.
+          </p>
+          <p>
+            I am not aiming to build the loudest interface. I care more about making the product understandable, reducing friction, and choosing technology for the problem instead of the other way around.
+          </p>
+        </div>
+
+        <div className="grid gap-4">
+          {focusAreas.map((item) => (
+            <div key={item.title} className="rounded-2xl border border-border bg-card/60 p-5">
+              <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="mt-10">
-        <h3 className="mb-4 text-lg font-semibold text-foreground">Tech Stack</h3>
+        <h3 className="mb-4 text-lg font-semibold text-foreground">Core stack</h3>
         <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
+          {coreStack.map((skill) => (
             <Badge
               key={skill}
               variant="outline"

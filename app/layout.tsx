@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
@@ -7,49 +7,47 @@ import "./globals.css"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import { StructuredData } from "@/components/structured-data"
+import { Navigation } from "@/components/navigation"
+import { SocialLinks } from "@/components/social-links"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lambivgills.com"),
   title: {
-    default: "Lambiv Gills Dzenyuy | Software Engineer & Researcher",
+    default: "Lambiv Gills Dzenyuy | Software Engineer",
     template: "%s | Lambiv Gills Dzenyuy"
   },
   description:
-    "Lambiv Gills Dzenyuy is a Software Engineer at Bilin GmbH specializing in Neo4j graph databases, Apache Kafka, PostgreSQL, and Spring Boot. Based in Germany with experience in full-stack development, data science, and software engineering.",
+    "Software engineer focused on custom DRM, real-time video, analytics systems, and practical product work across distributed teams.",
   keywords: [
     "Lambiv Gills Dzenyuy",
     "Software Engineer",
+    "Apache Kafka",
+    "Apache Druid",
+    "Digital Rights Management",
+    "DRM",
+    "Real-time Video",
+    "Machine Learning",
+    "Telegram API",
+    "Payments",
+    "LLM Deployment",
     "Neo4j",
-    "Apache Kafka", 
-    "PostgreSQL",
-    "Spring Boot",
-    "Java",
-    "Data Science",
-    "Graph Databases",
-    "Germany",
+    "Meilisearch",
+    "Redis",
+    "Laravel",
+    "Svelte",
+    "Soketi",
     "Bilin GmbH",
-    "Full Stack Developer",
     "React",
     "Node.js",
-    "Python",
-    "Software Development",
+    "Backend Systems",
+    "Product Engineering",
     "Portfolio"
   ],
   authors: [{ name: "Lambiv Gills Dzenyuy" }],
   creator: "Lambiv Gills Dzenyuy",
   publisher: "Lambiv Gills Dzenyuy",
-  generator: "Next.js",
   applicationName: "Lambiv Gills Dzenyuy Portfolio",
   referrer: "origin-when-cross-origin",
-  colorScheme: "dark light",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#059669" },
-    { media: "(prefers-color-scheme: dark)", color: "#64ffda" }
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   robots: {
     index: true,
     follow: true,
@@ -66,28 +64,37 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://lambivgills.com",
     siteName: "Lambiv Gills Dzenyuy Portfolio",
-    title: "Lambiv Gills Dzenyuy | Software Engineer & Researcher",
-    description: "Software Engineer at Bilin GmbH specializing in Neo4j graph databases, Apache Kafka, PostgreSQL, and Spring Boot. Based in Germany with expertise in full-stack development.",
+    title: "Lambiv Gills Dzenyuy | Software Engineer",
+    description: "Custom DRM, real-time video, analytics systems, and practical product work.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Lambiv Gills Dzenyuy - Software Engineer & Researcher",
+        url: "/face.JPG",
+        alt: "Lambiv Gills Dzenyuy",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lambiv Gills Dzenyuy | Software Engineer & Researcher",
-    description: "Software Engineer at Bilin GmbH specializing in Neo4j, Apache Kafka, PostgreSQL, and Spring Boot.",
-    images: ["/og-image.png"],
+    title: "Lambiv Gills Dzenyuy | Software Engineer",
+    description: "Custom DRM, real-time video, analytics systems, and practical product work.",
+    images: ["/face.JPG"],
     creator: "@lambiv_dzenyuy",
   },
   alternates: {
     canonical: "https://lambivgills.com",
   },
   category: "technology",
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#059669" },
+    { media: "(prefers-color-scheme: dark)", color: "#64ffda" }
+  ],
 }
 
 export default function RootLayout({
@@ -97,12 +104,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <StructuredData />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
@@ -111,6 +112,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Suspense fallback={null}>
+            <StructuredData />
+            <Navigation />
+            <SocialLinks />
             {children}
             <Analytics />
           </Suspense>
