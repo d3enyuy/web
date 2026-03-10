@@ -9,6 +9,8 @@ import { StructuredData } from "@/components/structured-data"
 import { Navigation } from "@/components/navigation"
 import { SocialLinks } from "@/components/social-links"
 
+const ICON_VERSION = "20260310-2"
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://lambivgills.com"),
   title: {
@@ -103,7 +105,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+      <head>
+        <link rel="icon" href={`/icon.svg?v=${ICON_VERSION}`} type="image/svg+xml" sizes="any" />
+        <link rel="icon" href={`/favicon.ico?v=${ICON_VERSION}`} sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href={`/favicon-32x32.png?v=${ICON_VERSION}`} />
+        <link rel="icon" type="image/png" sizes="16x16" href={`/favicon-16x16.png?v=${ICON_VERSION}`} />
+        <link rel="shortcut icon" href={`/favicon.ico?v=${ICON_VERSION}`} />
+        <link rel="apple-touch-icon" sizes="180x180" href={`/apple-touch-icon.png?v=${ICON_VERSION}`} />
+      </head>
+      <body
+        suppressHydrationWarning
+        className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

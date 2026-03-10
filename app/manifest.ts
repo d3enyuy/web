@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
+  const iconVersion = '20260310-2'
+
   return {
     name: 'Lambiv Gills Dzenyuy Portfolio',
     short_name: 'Lambiv Portfolio',
@@ -11,17 +13,22 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#64ffda',
     icons: [
       {
-        src: '/favicon.ico',
+        src: `/icon.svg?v=${iconVersion}`,
+        sizes: 'any',
+        type: 'image/svg+xml',
+      },
+      {
+        src: `/favicon.ico?v=${iconVersion}`,
         sizes: '48x48',
         type: 'image/x-icon',
       },
       {
-        src: '/apple-icon.png',
-        sizes: '180x180',
+        src: `/favicon-32x32.png?v=${iconVersion}`,
+        sizes: '32x32',
         type: 'image/png',
       },
       {
-        src: '/icon.png',
+        src: `/apple-touch-icon.png?v=${iconVersion}`,
         sizes: '180x180',
         type: 'image/png',
       },
