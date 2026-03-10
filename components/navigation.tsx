@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
@@ -24,12 +24,53 @@ const pageItems = [
 export function Navigation() {
   const pathname = usePathname()
   const isHome = pathname === "/"
+  const navRef = useRef<HTMLElement>(null)
   const [activeSection, setActiveSection] = useState("")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mobileMenuTop, setMobileMenuTop] = useState(72)
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [pathname])
+
+  useEffect(() => {
+    const updateMobileMenuTop = () => {
+      setMobileMenuTop(navRef.current?.getBoundingClientRect().height ?? 72)
+    }
+
+    updateMobileMenuTop()
+    window.addEventListener("resize", updateMobileMenuTop)
+
+    return () => window.removeEventListener("resize", updateMobileMenuTop)
+  }, [])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)")
+    const handleChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    mediaQuery.addEventListener("change", handleChange)
+
+    return () => mediaQuery.removeEventListener("change", handleChange)
+  }, [])
+
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow
+    const originalTouchAction = document.body.style.touchAction
+
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+      document.body.style.touchAction = "none"
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow
+      document.body.style.touchAction = originalTouchAction
+    }
+  }, [isMobileMenuOpen])
 
   useEffect(() => {
     if (!isHome) {
@@ -95,14 +136,27 @@ export function Navigation() {
     setIsMobileMenuOpen(false)
   }
 
+  const closeMobileMenu = () => setIsMobileMenuOpen(false)
+
   const navLinkClassName = (isActive: boolean) =>
     cn(
       "rounded-md px-3 py-2 text-sm font-medium transition-colors",
       isActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground",
     )
 
+  const mobileLinkClassName = (isActive: boolean) =>
+    cn(
+      "block w-full rounded-xl px-4 py-3 text-base font-medium transition-colors",
+      isActive
+        ? "bg-primary/10 text-primary"
+        : "text-foreground hover:bg-muted/70 hover:text-foreground",
+    )
+
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
+    <nav
+      ref={navRef}
+      className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm"
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 md:px-12 lg:px-24">
         <a
           href={isHome ? "#top" : "/"}
@@ -147,9 +201,12 @@ export function Navigation() {
         <div className="flex items-center gap-4 lg:hidden">
           <ThemeToggle />
           <button
+            type="button"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             className="text-foreground transition-colors hover:text-primary"
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -157,41 +214,66 @@ export function Navigation() {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-[73px] z-40 bg-background/98 backdrop-blur-md lg:hidden">
-          <ul className="flex h-full flex-col items-start gap-2 overflow-y-auto px-6 py-8">
-            {sectionItems.map(({ id, label }) =>
-              isHome ? (
-                <li key={id} className="w-full">
-                  <a
-                    href={sectionHref(id)}
-                    onClick={(e) => handleSectionClick(e, id)}
-                    className={navLinkClassName(activeSection === id)}
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm lg:hidden"
+            style={{ top: mobileMenuTop }}
+            aria-label="Close menu"
+            onClick={closeMobileMenu}
+          />
+
+          <div
+            id="mobile-navigation"
+            className="fixed inset-x-4 z-50 overflow-hidden rounded-2xl border border-border bg-background shadow-2xl lg:hidden"
+            style={{
+              top: mobileMenuTop + 8,
+              maxHeight: `calc(100dvh - ${mobileMenuTop + 16}px)`,
+            }}
+          >
+            <ul className="flex flex-col gap-1 overflow-y-auto p-3">
+              {sectionItems.map(({ id, label }) =>
+                isHome ? (
+                  <li key={id} className="w-full">
+                    <a
+                      href={sectionHref(id)}
+                      onClick={(e) => handleSectionClick(e, id)}
+                      className={mobileLinkClassName(activeSection === id)}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={id} className="w-full">
+                    <Link
+                      href={sectionHref(id)}
+                      className={mobileLinkClassName(false)}
+                      onClick={closeMobileMenu}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ),
+              )}
+
+              <li className="w-full py-2">
+                <div className="h-px bg-border" />
+              </li>
+
+              {pageItems.map(({ href, label }) => (
+                <li key={href} className="w-full">
+                  <Link
+                    href={href}
+                    className={mobileLinkClassName(pathname === href)}
+                    onClick={closeMobileMenu}
                   >
-                    {label}
-                  </a>
-                </li>
-              ) : (
-                <li key={id} className="w-full">
-                  <Link href={sectionHref(id)} className={navLinkClassName(false)}>
                     {label}
                   </Link>
                 </li>
-              ),
-            )}
-
-            <li className="w-full py-2">
-              <div className="h-px bg-border" />
-            </li>
-
-            {pageItems.map(({ href, label }) => (
-              <li key={href} className="w-full">
-                <Link href={href} className={navLinkClassName(pathname === href)}>
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+              ))}
+            </ul>
+          </div>
+        </>
       )}
     </nav>
   )
