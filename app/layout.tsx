@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -47,6 +46,10 @@ export const metadata: Metadata = {
   creator: "Lambiv Gills Dzenyuy",
   publisher: "Lambiv Gills Dzenyuy",
   applicationName: "Lambiv Gills Dzenyuy Portfolio",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+  },
   referrer: "origin-when-cross-origin",
   robots: {
     index: true,
@@ -116,7 +119,6 @@ export default function RootLayout({
             <Navigation />
             <SocialLinks />
             {children}
-            <Analytics />
           </Suspense>
         </ThemeProvider>
       </body>
