@@ -46,10 +46,6 @@ export const metadata: Metadata = {
   creator: "Lambiv Gills Dzenyuy",
   publisher: "Lambiv Gills Dzenyuy",
   applicationName: "Lambiv Gills Dzenyuy Portfolio",
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["/icon.svg"],
-  },
   referrer: "origin-when-cross-origin",
   robots: {
     index: true,
